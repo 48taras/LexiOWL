@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="LexiOWL.Veiws.MainPages.MainPage"
+            Title="Головна" IconImageSource="mainIco.png">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="#946710" WidthRequest="50" Margin="0,0,0,0">
+                <Label Text="LexiOWL" TextColor="White" FontFamily="DudkaBoldItalic" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="20"/>
+            </StackLayout>
+            <ScrollView Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
+                <StackLayout>
+                    <StackLayout>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Text="Розпочнемо &#10;   заняття?" 
+                                VerticalOptions="Center" 
+                                HorizontalOptions="End" 
+                                    Margin="40,30,0,0"
+                                    FontSize="22"
+                                    TextColor ="#946710"/>
+
+                            <Image Grid.Column="1" 
+                                Source="OwlQ.gif"
+                                IsAnimationPlaying="True"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                Margin="15,10,10,20"
+                                WidthRequest="170"
+                                HeightRequest="170"/>
+                        </Grid>
+                    </StackLayout>
+
+                    <Grid x:Name="topicButtons">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

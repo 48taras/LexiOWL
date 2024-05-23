@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LexiOWL.Veiws.MainPages.Lessons.Lesson" BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" VerticalScrollBarVisibility="Never">
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Button x:Name="BackButton" HorizontalOptions="Start" Clicked="BackButton_Clicked" WidthRequest="55" Margin="10,10,0,0" BackgroundColor="White" CornerRadius="50" ImageSource="Left.png"/>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="Center" Margin="0,15,0,15">
+                        <StackLayout Orientation="Vertical">
+                            <Label x:Name="topicFirstPart" FontSize="24" FontFamily="DudkaBoldItalic" TextColor="Black" HorizontalTextAlignment="Center"/>
+                            <Label x:Name="topicSecondPart" FontSize="16" FontFamily="DudkaBoldItalic" TextColor="Black" HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <Frame CornerRadius="15" HasShadow="True" Margin="10" Padding="0">
+                        <WebView x:Name="VideoWebView" WidthRequest="360" HeightRequest="240" MinimumHeightRequest="360" MinimumWidthRequest="240" />
+                    </Frame>
+
+                    <WebView x:Name="ContentWebView" MinimumHeightRequest="500" MinimumWidthRequest="240" HeightRequest="100" Margin="5,0,5,0" />
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button Text="Назад" Grid.Column="0" HorizontalOptions="FillAndExpand" BackgroundColor="White" CornerRadius="10" TextColor="#946710" Clicked="BackButton_Clicked"/>
+                        <Button Text="Далі" Grid.Column="1" HorizontalOptions="FillAndExpand" BackgroundColor="White" CornerRadius="10" TextColor="#946710" Clicked="OnwardsButton_Clicked"/>
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

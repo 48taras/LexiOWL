@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LexiOWL.Veiws.MainPages.Lessons.SpellingQuestionPage" BackgroundColor="White">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0">
+                <WebView x:Name="QuestionWebView" BackgroundColor="White" MinimumHeightRequest="300" MinimumWidthRequest="240"  HeightRequest="100"/>
+             </StackLayout>
+
+            <StackLayout Grid.Row="1">
+                <Entry x:Name="entrySpelling" Margin="17,0,17,0" TextChanged="EntrySpelling_TextChanged"/>
+            </StackLayout>
+
+            <StackLayout x:Name="massegeContainer" Grid.Row="2">
+            </StackLayout>
+
+            <Grid Grid.Row="3" Padding="10" RowSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Назад" Grid.Column="0" VerticalOptions="Center" BackgroundColor="White" CornerRadius="10" TextColor="#946710" Clicked="BackButton_Clicked"/>
+                <Button x:Name="okButton" Text="Ок" Grid.Column="1" VerticalOptions="Center" BackgroundColor="White" CornerRadius="10" TextColor="LightGray" Clicked="OnwardsButton_Clicked" IsEnabled="False"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

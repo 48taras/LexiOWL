@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="White"
+             x:Class="LexiOWL.Veiws.RegistrationVeiws.WelcomePage">
+
+
+    <StackLayout HorizontalOptions="FillAndExpand" Padding="5,5,5,5">
+
+        <Image Source="OwlHi.gif" IsAnimationPlaying="True" HorizontalOptions="Center" Margin="0,170,25,0" WidthRequest="170" HeightRequest="170"/>
+
+
+        <Label Text="LexiOWL"
+               HorizontalOptions="CenterAndExpand"
+               FontSize="30"  
+               TextColor="#946710" Margin="0,15,0,30"/>
+
+        <Label Text="Інтерактивний путівник&#10;для зручного вивчення&#10;     української мови"
+               HorizontalOptions="CenterAndExpand"
+               FontSize="18" TextColor="#9a9894"/>
+
+        <Button x:Name="WelcomeButton" 
+            Text="Почати"
+            TextColor="White"
+            TextTransform="None"
+            BackgroundColor="#A76710"
+            Font="22"
+            Style="{StaticResource MyButtonStyle}"
+            Margin="0,170,0,5"
+            Clicked="WelcomeButton_Clicked" />
+
+        <Label Text="Вже навчаюсь" TextColor="#A76710" FontSize="20" HorizontalOptions="CenterAndExpand">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </Label.GestureRecognizers>
+        </Label>
+
+    </StackLayout>
+
+
+
+
+
+</ContentPage>

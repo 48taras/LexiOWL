@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LexiOWL.Veiws.RegistrationVeiws.AgePage">
+    
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="15">
+
+            <Button  ImageSource="Right.png" BackgroundColor="White" CornerRadius="50" WidthRequest="25" HeightRequest="25"/>
+
+            <ProgressBar Progress="0.33" ProgressColor="#946710" WidthRequest="300" />
+
+        </StackLayout>
+
+        <Label Text="Вкажіть вік"
+       HorizontalOptions="CenterAndExpand"
+       FontSize="25"  
+       FontAttributes="Italic"
+       TextColor="Black" Margin="0,20"/>
+        <StackLayout Spacing="10">
+            <Frame x:Name="AgeCategory1" Padding="10" Opacity="1" Scale="1" TranslationX="0" CornerRadius="20" BorderColor="#ADADAD" HasShadow="True" BackgroundColor="White" Margin="0,0,0,10" WidthRequest="300" HeightRequest="30" HorizontalOptions="CenterAndExpand" >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCategoryTapped" />
+                </Frame.GestureRecognizers>
+                <Label x:Name="LabelAgeCategory1" Text="до 13" FontSize="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame x:Name="AgeCategory2" Padding="10" Opacity="1" Scale="1" TranslationX="0" CornerRadius="20" BorderColor="#ADADAD" HasShadow="True" BackgroundColor="White" Margin="0,0,0,10" WidthRequest="300" HeightRequest="30" HorizontalOptions="CenterAndExpand">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCategoryTapped" />
+                </Frame.GestureRecognizers>
+                <Label x:Name="LabelAgeCategory2" Text="14 - 17" FontSize="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame x:Name="AgeCategory3" Padding="10" Opacity="1" Scale="1" TranslationX="0" CornerRadius="20" BorderColor="#ADADAD" HasShadow="True" BackgroundColor="White" Margin="0,0,0,10" WidthRequest="300" HeightRequest="30" HorizontalOptions="CenterAndExpand">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCategoryTapped" />
+                </Frame.GestureRecognizers>
+                <Label x:Name="LabelAgeCategory3" Text="18 - 24" FontSize="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame x:Name="AgeCategory4" Padding="10" Opacity="1" Scale="1" TranslationX="0" CornerRadius="20" BorderColor="#ADADAD" HasShadow="True" BackgroundColor="White" Margin="0,0,0,10" WidthRequest="300" HeightRequest="30" HorizontalOptions="CenterAndExpand">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCategoryTapped" />
+                </Frame.GestureRecognizers>
+                <Label x:Name="LabelAgeCategory4" Text="25 - 44" FontSize="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+            <Frame x:Name="AgeCategory5"  Padding="10" Opacity="1" Scale="1" TranslationX="0" CornerRadius="20" BorderColor="#ADADAD" HasShadow="True" BackgroundColor="White" Margin="0,0,0,10" WidthRequest="300" HeightRequest="30" HorizontalOptions="CenterAndExpand">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCategoryTapped" />
+                </Frame.GestureRecognizers>
+                <Label x:Name="LabelAgeCategory5" Text="45 +" FontSize="20" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </Frame>
+
+            <Button x:Name="FurtherButton"
+            Text="Далі"
+            TextColor="White"
+            TextTransform="None"
+            BackgroundColor="#A76710"
+            Font="20"
+            FontAttributes="Italic"
+            Style="{StaticResource MyButtonStyle}"
+            Margin="0,220,0,5"
+            Clicked="OnNextButtonClicked" />
+        </StackLayout>
+    </StackLayout>
+    
+</ContentPage>

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="White"
+             x:Class="LexiOWL.Veiws.LoginVeiws.LoginPage">
+
+    <StackLayout>
+
+        <StackLayout BackgroundColor="#946710" WidthRequest="50">
+            <Label Text="LexiOWL" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="20"/>
+        </StackLayout>
+
+        <Label Text="Увійти" FontSize="25" FontAttributes="Italic" HorizontalTextAlignment="Center" Margin="0,100,0,20"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Frame Padding="10" CornerRadius="20" WidthRequest="300" HeightRequest="40" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="LoginIcon.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,0,0,0"/>
+                    <Entry x:Name="emailEntry" Grid.Column="2" Placeholder="Е - @mail або логін" VerticalOptions="FillAndExpand" WidthRequest="100" HeightRequest="20" Margin="0,0,10,0"/>
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="1" Padding="10" CornerRadius="20" WidthRequest="300" HeightRequest="40" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="PassIcon.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,0,0,0"/>
+
+                    <Entry x:Name="passwordEntry" Grid.Column="2" IsPassword="True" Placeholder="Пароль" VerticalOptions="FillAndExpand" WidthRequest="100" HeightRequest="20" Margin="0,0,10,0"/>
+                </Grid>
+            </Frame>
+        </Grid>
+
+
+
+        <Button x:Name="LoginButton" 
+                Text="Увійти"
+                TextColor="White"
+                TextTransform="None"
+                BackgroundColor="#A76710"
+                Font="22"
+                Style="{StaticResource MyButtonStyle}"
+                Margin="0,70,0,5"
+                Clicked="LoginButton_Clicked" />
+
+        <Label Text="Забули пароль?" TextColor="#A76710" FontSize="20" HorizontalOptions="CenterAndExpand">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapForgotPass_Tapped" />
+            </Label.GestureRecognizers>
+        </Label>
+
+
+        <Label Text="Увійти через соціальну мережу" FontSize="15" FontAttributes="Italic" HorizontalTextAlignment="Center" Margin="0,150,0,0"/>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+
+            <Frame x:Name="GoogleButton" CornerRadius="20" BorderColor="Gray" Padding="10" HasShadow="True" BackgroundColor="White" Margin="10" WidthRequest="120" HeightRequest="25">
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Image Source="GoogleIcon.png" HeightRequest="24" WidthRequest="24" />
+                    <Label Text="Google" VerticalTextAlignment="Center" />
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGoogle_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <Frame x:Name="FaceBookButton" CornerRadius="20" BorderColor="Gray" Padding="10" HasShadow="True" BackgroundColor="White" Margin="10" WidthRequest="120">
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Image Source="FaceBookIkon.png" HeightRequest="24" WidthRequest="24" />
+                    <Label Text="Facebook" VerticalTextAlignment="Center" />
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapFaceBook_Tapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+
+        </StackLayout>
+    </StackLayout>
+
+
+</ContentPage>

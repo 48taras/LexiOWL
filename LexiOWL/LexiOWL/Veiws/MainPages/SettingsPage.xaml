@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LexiOWL.Veiws.MainPages.SettingsPage"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="BackButton" HorizontalOptions="Start" Clicked="BackButton_Clicked" WidthRequest="55" Margin="10,10,0,0" BackgroundColor="White" CornerRadius="50" ImageSource="Left.png"/>
+            </StackLayout>
+            <ScrollView Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
+                <StackLayout>
+
+                    <Frame Padding="0" CornerRadius="70" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10" WidthRequest="90" HeightRequest="90" BorderColor="Black" BackgroundColor="LightGray">
+                        <Image x:Name="userImage" HeightRequest="100" WidthRequest="100" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+                    </Frame>
+
+                    <Frame x:Name="EditorPhotoButton" CornerRadius="20" Margin="7" Padding="10,5,10,7"  HorizontalOptions="CenterAndExpand" WidthRequest="250" HeightRequest="20"  >
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                            <Label Text="Редагувати фото" FontSize="16" Margin="0,0,0,0"/>
+                            <Image Source="PhotoRedactor.png"/>
+                        </StackLayout>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapEditorPhotoButton_Tapped"/>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+
+                    <Label Text="Ім'я" FontSize="19" FontAttributes="Italic" HorizontalTextAlignment="Start" Margin="30,15,0,0"/>
+
+                    <Frame Padding="10" CornerRadius="20" WidthRequest="350" HeightRequest="40" HorizontalOptions="CenterAndExpand" Margin="0,0,0,0">
+                        <Entry  x:Name="emailEntry" Style="{StaticResource myEntry}" Grid.Column="2" Placeholder="E-mail" VerticalOptions="FillAndExpand" WidthRequest="100" HeightRequest="20" Margin="10,0,10,0"/>
+
+                    </Frame>
+
+                    <Label Text="Ім'я користувача" FontSize="19" FontAttributes="Italic" HorizontalTextAlignment="Start" Margin="30,15,0,0"/>
+
+                    <Frame Grid.Row="1" Padding="10" CornerRadius="20" WidthRequest="350" HeightRequest="40" HorizontalOptions="CenterAndExpand" Margin="0,0,0,0">
+
+                        <Entry  x:Name="loginEntry" Grid.Column="2" Style="{StaticResource myEntry}" Placeholder="Логін" VerticalOptions="FillAndExpand" WidthRequest="100" HeightRequest="20" Margin="10,0,10,0"/>
+
+                    </Frame>
+
+                    <Label Text="Пароль" FontSize="19" FontAttributes="Italic" HorizontalTextAlignment="Start" Margin="30,15,0,0"/>
+
+                    <Frame Grid.Row="2" Padding="10" CornerRadius="20" WidthRequest="350" HeightRequest="40" HorizontalOptions="CenterAndExpand" Margin="0,0,0,0">
+
+                        <Entry x:Name="passwordEntry" Grid.Column="2" Style="{StaticResource myEntry}" IsPassword="True" Placeholder="Пароль" VerticalOptions="FillAndExpand" WidthRequest="100" HeightRequest="20" Margin="10,0,10,0"/>
+
+                    </Frame>
+
+                    <Label Text="Загальне:" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Start" Margin="30,15,0,0"/>
+
+                    <Frame Padding="1" CornerRadius="20" WidthRequest="300" BorderColor="Black" HeightRequest="45" HorizontalOptions="CenterAndExpand" Margin="0,12,0,0">
+                        <Picker x:Name="pickerAge" WidthRequest="200" HorizontalTextAlignment="Center" Margin="40,0,40,0">
+                            <Picker.Items >
+                                <x:String>до 13</x:String>
+                                <x:String>14 - 17</x:String>
+                                <x:String>18 - 24</x:String>
+                                <x:String>25 - 44</x:String>
+                                <x:String>45 +</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Frame>
+
+
+                    <Frame Padding="1" CornerRadius="20" WidthRequest="300" BorderColor="Black" HeightRequest="45" HorizontalOptions="CenterAndExpand" Margin="0,12,0,0">
+                        <Picker x:Name="pickerKnowledge" WidthRequest="200" HorizontalTextAlignment="Center" Margin="40,0,40,0">
+                            <Picker.Items >
+                                <x:String>😥     Не знаю української</x:String>
+                                <x:String>😐     Знаю трохи</x:String>
+                                <x:String>🙂     Знаю добре</x:String>
+                                <x:String>😁     Знаю дуже добре</x:String>
+                                <x:String>😄     Знаю відмінно</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Frame>
+
+
+                    <Frame Padding="1" CornerRadius="20" WidthRequest="300" BorderColor="Black" HeightRequest="45" HorizontalOptions="CenterAndExpand" Margin="0,12,0,20">
+                        <Picker x:Name="pickerIntensity" WidthRequest="200" HorizontalTextAlignment="Center" Margin="40,0,40,0">
+                            <Picker.Items >
+                                <x:String>Спокійно (5 хвилин/день)</x:String>
+                                <x:String>Звичайно (10 хвилин/день)</x:String>
+                                <x:String>Ефективно (15 хвилин/день)</x:String>
+                                <x:String>Серйозно (20 хвилин/день)</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Frame>
+                    <Button x:Name="EditButton" Text="Зберегти" Clicked="EditButton_Clicked" BackgroundColor="White" TextColor="Gray"/>
+
+                    <Button x:Name="ExitButton" Text="Вийти" Clicked="ExitButton_Clicked" BackgroundColor="White" TextColor="Red"/>
+
+                </StackLayout>
+            </ScrollView>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

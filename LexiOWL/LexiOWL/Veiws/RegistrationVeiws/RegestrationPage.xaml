@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LexiOWL.Veiws.RegistrationVeiws.RegestrationPage">
+
+    <StackLayout>
+
+        <StackLayout Orientation="Horizontal" Padding="15">
+
+            <ProgressBar Progress="0.167" ProgressColor="#946710" WidthRequest="300" Margin="30,0,0,0"/>
+
+        </StackLayout>
+
+        <Label Text="Рєстрація" FontSize="25" FontAttributes="Italic" HorizontalTextAlignment="Center"/>
+
+        <Label Text="Зареєструйтеся, для збереження&#10; доступу" FontSize="20" FontAttributes="Italic" TextColor="#7D7A7A" HorizontalTextAlignment="Center"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Frame Padding="10" CornerRadius="20" WidthRequest="300" HeightRequest="40" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="MailIcon.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,0,0,0"/>
+                    <Entry  x:Name="emailEntry" Grid.Column="2" Placeholder="E-mail" VerticalOptions="FillAndExpand" WidthRequest="100" HeightRequest="20" Margin="0,0,10,0"/>
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="1" Padding="10" CornerRadius="20" WidthRequest="300" HeightRequest="40" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="LoginIcon.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,0,0,0"/>
+                    <Entry  x:Name="loginEntry" Grid.Column="2" Placeholder="Логін" VerticalOptions="FillAndExpand" WidthRequest="100" HeightRequest="20" Margin="0,0,10,0"/>
+                </Grid>
+            </Frame>
+
+            <Frame Grid.Row="2" Padding="10" CornerRadius="20" WidthRequest="300" HeightRequest="40" HorizontalOptions="CenterAndExpand" Margin="0,20,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="PassIcon.png" HeightRequest="24" WidthRequest="24" VerticalOptions="Center" HorizontalOptions="Start" Margin="10,0,0,0"/>
+                    <Entry x:Name="passwordEntry" Grid.Column="2" IsPassword="True" Placeholder="Пароль" VerticalOptions="FillAndExpand" WidthRequest="100" HeightRequest="20" Margin="0,0,10,0"/>
+                </Grid>
+            </Frame>
+        </Grid>
+
+        <Button x:Name="FurtherButton" 
+                Text="Зареєструватися"
+                TextColor="White"
+                TextTransform="None"
+                BackgroundColor="#A76710"
+                Font="20"
+                FontAttributes="Italic"
+                Style="{StaticResource MyButtonStyle}"
+                Margin="0,260,0,5"
+                Clicked="FurtherButton_Clicked" />
+
+        <Label Text="Вже навчаюсь" TextColor="#A76710" FontSize="20"  FontAttributes="Italic" HorizontalOptions="CenterAndExpand">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapAvtorisation_Tapped" />
+            </Label.GestureRecognizers>
+        </Label>
+    </StackLayout>
+
+
+
+</ContentPage>

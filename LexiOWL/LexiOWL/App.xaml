@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LexiOWL.App">
+    <Application.Resources>
+        <Style TargetType="Button" x:Key="MyButtonStyle">
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            <Setter Property="WidthRequest" Value="200" />
+            <Setter Property="HeightRequest" Value="50" />
+            <Setter Property="CornerRadius" Value="25" />
+            <Setter Property="FontAttributes" Value="Italic" />
+        </Style>
+
+        <Style TargetType="Entry" x:Key="myEntry">
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="WidthRequest" Value="20" />
+        </Style>
+
+
+
+    </Application.Resources>
+</Application>

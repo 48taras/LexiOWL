@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LexiOWL.Veiws.RegistrationVeiws.DonePage">
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="15">
+
+            <ProgressBar Progress="1" ProgressColor="#946710" WidthRequest="300" Margin="30,0,0,0"/>
+                        
+        </StackLayout>
+
+        <Label Text="Готово!"
+           HorizontalOptions="CenterAndExpand"
+           FontSize="25"  
+           FontAttributes="Italic"
+           TextColor="Black" Margin="0,20"/>
+
+        <Image Source="OwlHoliday.gif" IsAnimationPlaying="True" HorizontalOptions="Center" Margin="0,100,0,0" WidthRequest="190" HeightRequest="190"/>
+
+        <Label Text=" Реєстрація виконана &#10;              успішно!"
+           HorizontalOptions="CenterAndExpand"
+           FontSize="17"  
+           FontAttributes="Italic"
+           TextColor="Gray" Margin="0,10"/>
+
+        <Button x:Name="DoneButton" 
+        Text="Готово"
+        TextColor="White"
+        TextTransform="None"
+        BackgroundColor="#A76710"
+        Font="22"
+        Style="{StaticResource MyButtonStyle}"
+        Margin="0,220,0,5"
+        Clicked="DoneButton_Clicked" />
+
+    </StackLayout>
+
+</ContentPage>

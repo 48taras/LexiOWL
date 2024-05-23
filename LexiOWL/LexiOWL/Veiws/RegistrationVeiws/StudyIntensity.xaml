@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LexiOWL.Veiws.RegistrationVeiws.StudyIntensity">
+    <StackLayout HorizontalOptions="FillAndExpand">
+
+        <StackLayout Orientation="Horizontal" Padding="15">
+
+            <Button  ImageSource="Right.png" BackgroundColor="White" CornerRadius="50" WidthRequest="25" HeightRequest="25"/>
+
+            <ProgressBar Progress="0.66" ProgressColor="#946710" WidthRequest="300" />
+
+        </StackLayout>
+
+        <Label Text="Інтенсивність вивчення"
+       HorizontalOptions="CenterAndExpand"
+       FontSize="25"  
+       FontAttributes="Italic"
+       TextColor="Black" Margin="0,20"/>
+
+        <StackLayout Spacing="10">
+            <Frame x:Name="Intensity1" Padding="10" Opacity="1" Scale="1" TranslationX="00" CornerRadius="20" BorderColor="#ADADAD" HasShadow="True" BackgroundColor="White" Margin="0,0,0,10" WidthRequest="300" HeightRequest="30" HorizontalOptions="CenterAndExpand" >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnButtonTapped" />
+                </Frame.GestureRecognizers>
+                <StackLayout Orientation="Horizontal">
+                    <Label  Text="Спокійно" FontSize="20" Margin="10,0,0,0" HorizontalOptions="StartAndExpand"/>
+                    <Label Text="5 хвилин/день" FontSize="15" TextColor="#ADADAD" VerticalOptions="CenterAndExpand" Margin="0,0,10,0" HorizontalOptions="End"/>
+                </StackLayout>
+            </Frame>
+            <Frame x:Name="Intensity2" Padding="10" Opacity="1" Scale="1" TranslationX="0" CornerRadius="20" BorderColor="#ADADAD" HasShadow="True" BackgroundColor="White" Margin="0,0,0,10" WidthRequest="300" HeightRequest="30" HorizontalOptions="CenterAndExpand">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnButtonTapped" />
+                </Frame.GestureRecognizers>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Звичайно" FontSize="20" Margin="10,0,0,0" HorizontalOptions="StartAndExpand"/>
+                    <Label Text="10 хвилин/день" FontSize="15" TextColor="#ADADAD" VerticalOptions="CenterAndExpand" Margin="0,0,10,0" HorizontalOptions="End"/>
+                </StackLayout>
+            </Frame>
+            <Frame x:Name="Intensity3" Padding="10" Opacity="1" Scale="1" TranslationX="0" CornerRadius="20" BorderColor="#ADADAD" HasShadow="True" BackgroundColor="White" Margin="0,0,0,10" WidthRequest="300" HeightRequest="30" HorizontalOptions="CenterAndExpand">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnButtonTapped" />
+                </Frame.GestureRecognizers>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Ефективно" FontSize="20" Margin="10,0,0,0" HorizontalOptions="StartAndExpand"/>
+                    <Label Text="15 хвилин/день" FontSize="15" TextColor="#ADADAD" VerticalOptions="CenterAndExpand" Margin="0,0,10,0" HorizontalOptions="End"/>
+                </StackLayout>
+            </Frame>
+            <Frame x:Name="Intensity4" Padding="10" Opacity="1" Scale="1" TranslationX="0" CornerRadius="20" BorderColor="#ADADAD" HasShadow="True" BackgroundColor="White" Margin="0,0,0,10" WidthRequest="300" HeightRequest="30" HorizontalOptions="CenterAndExpand">
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnButtonTapped" />
+                </Frame.GestureRecognizers>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Серйозно" FontSize="20" Margin="10,0,0,0" HorizontalOptions="StartAndExpand"/>
+                    <Label Text="20 хвилин/день" FontSize="15" TextColor="#ADADAD" VerticalOptions="CenterAndExpand" Margin="0,0,10,0" HorizontalOptions="End"/>
+                </StackLayout>
+            </Frame>
+
+            <Button x:Name="FurtherButton"
+            Text="Далі"
+            TextColor="White"
+            TextTransform="None"
+            BackgroundColor="#A76710"
+            Font="20"
+            FontAttributes="Italic"
+            Style="{StaticResource MyButtonStyle}"
+            Margin="0,280,0,5"
+            Clicked="FurtherButton_Clicked" />
+        </StackLayout>
+    </StackLayout>
+    
+</ContentPage>

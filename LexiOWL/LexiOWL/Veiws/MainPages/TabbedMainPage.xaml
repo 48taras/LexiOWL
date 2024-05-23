@@ -1,0 +1,11 @@
+﻿<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LexiOWL.Veiws.MainPages"
+             x:Class="LexiOWL.Veiws.MainPages.TabbedMainPage">
+
+    <TabbedPage.Children>
+        <local:TextsPage />
+        <local:MainPage/>
+        <local:ProfilePage />
+    </TabbedPage.Children>
+</TabbedPage>

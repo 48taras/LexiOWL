@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LexiOWL.Veiws.RegistrationVeiws.Notification">
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="15">
+
+            <ProgressBar Progress="0.83" ProgressColor="#946710" WidthRequest="300" Margin="30,0,0,0"/>
+
+        </StackLayout>
+
+        <Label Text="Отримуйте сповіщення!"
+       HorizontalOptions="CenterAndExpand"
+       FontSize="25"  
+       FontAttributes="Italic"
+       TextColor="Black" Margin="0,20"/>
+
+        <Image Source="OwlWithPhone.gif" IsAnimationPlaying="True" HorizontalOptions="Center" Margin="0,100,0,0" WidthRequest="170" HeightRequest="170"/>
+
+        <Label Text=" Увімкніть сповіщення &#10;для застосунку LexiOwl"
+           HorizontalOptions="CenterAndExpand"
+           FontSize="17"  
+           FontAttributes="Italic"
+           TextColor="Gray" Margin="0,0"/>
+
+        <Button x:Name="FurtherButton" 
+            Text="Далі"
+            TextColor="White"
+            TextTransform="None"
+            BackgroundColor="#A76710"
+            Font="22"
+            Style="{StaticResource MyButtonStyle}"
+            Margin="0,220,0,5"
+            Clicked="FurtherButton_Clicked" />
+
+        <Label Text="Пропустити" TextColor="#A76710" FontSize="20" HorizontalOptions="CenterAndExpand">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </Label.GestureRecognizers>
+        </Label>
+
+    </StackLayout>
+</ContentPage>
