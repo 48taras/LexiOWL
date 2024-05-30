@@ -50,42 +50,37 @@
 
                     <Label Text="Загальне:" FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Start" Margin="30,15,0,0"/>
 
-                    <Frame Padding="1" CornerRadius="20" WidthRequest="300" BorderColor="Black" HeightRequest="45" HorizontalOptions="CenterAndExpand" Margin="0,12,0,0">
-                        <Picker x:Name="pickerAge" WidthRequest="200" HorizontalTextAlignment="Center" Margin="40,0,40,0">
-                            <Picker.Items >
-                                <x:String>до 13</x:String>
-                                <x:String>14 - 17</x:String>
-                                <x:String>18 - 24</x:String>
-                                <x:String>25 - 44</x:String>
-                                <x:String>45 +</x:String>
-                            </Picker.Items>
-                        </Picker>
-                    </Frame>
+                    <Picker x:Name="pickerAge" WidthRequest="200" HorizontalTextAlignment="Center" Margin="40,0,40,0">
+                        <Picker.Items >
+                            <x:String>до 13</x:String>
+                            <x:String>14 - 17</x:String>
+                            <x:String>18 - 24</x:String>
+                            <x:String>25 - 44</x:String>
+                            <x:String>45 +</x:String>
+                        </Picker.Items>
+                    </Picker>
 
 
-                    <Frame Padding="1" CornerRadius="20" WidthRequest="300" BorderColor="Black" HeightRequest="45" HorizontalOptions="CenterAndExpand" Margin="0,12,0,0">
-                        <Picker x:Name="pickerKnowledge" WidthRequest="200" HorizontalTextAlignment="Center" Margin="40,0,40,0">
-                            <Picker.Items >
-                                <x:String>😥     Не знаю української</x:String>
-                                <x:String>😐     Знаю трохи</x:String>
-                                <x:String>🙂     Знаю добре</x:String>
-                                <x:String>😁     Знаю дуже добре</x:String>
-                                <x:String>😄     Знаю відмінно</x:String>
-                            </Picker.Items>
-                        </Picker>
-                    </Frame>
+                    <Picker x:Name="pickerKnowledge" WidthRequest="200" HorizontalTextAlignment="Center" Margin="40,0,40,0">
+                        <Picker.Items >
+                            <x:String>😥     Не знаю української</x:String>
+                            <x:String>😐     Знаю трохи</x:String>
+                            <x:String>🙂     Знаю добре</x:String>
+                            <x:String>😁     Знаю дуже добре</x:String>
+                            <x:String>😄     Знаю відмінно</x:String>
+                        </Picker.Items>
+                    </Picker>
 
 
-                    <Frame Padding="1" CornerRadius="20" WidthRequest="300" BorderColor="Black" HeightRequest="45" HorizontalOptions="CenterAndExpand" Margin="0,12,0,20">
-                        <Picker x:Name="pickerIntensity" WidthRequest="200" HorizontalTextAlignment="Center" Margin="40,0,40,0">
-                            <Picker.Items >
-                                <x:String>Спокійно (5 хвилин/день)</x:String>
-                                <x:String>Звичайно (10 хвилин/день)</x:String>
-                                <x:String>Ефективно (15 хвилин/день)</x:String>
-                                <x:String>Серйозно (20 хвилин/день)</x:String>
-                            </Picker.Items>
-                        </Picker>
-                    </Frame>
+                    <Picker x:Name="pickerIntensity" WidthRequest="200" HorizontalTextAlignment="Center" Margin="40,0,40,0">
+                        <Picker.Items >
+                            <x:String>Спокійно (5 хвилин/день)</x:String>
+                            <x:String>Звичайно (10 хвилин/день)</x:String>
+                            <x:String>Ефективно (15 хвилин/день)</x:String>
+                            <x:String>Серйозно (20 хвилин/день)</x:String>
+                        </Picker.Items>
+                    </Picker>
+                        
                     <Button x:Name="EditButton" Text="Зберегти" Clicked="EditButton_Clicked" BackgroundColor="White" TextColor="Gray"/>
 
                     <Button x:Name="ExitButton" Text="Вийти" Clicked="ExitButton_Clicked" BackgroundColor="White" TextColor="Red"/>

@@ -15,6 +15,8 @@ namespace LexiOWL.Domain.Entities
 
         public string Password { get; set; }
 
-        public Profile Profile { get; set; }
+        public virtual Profile Profile { get; set; }
+
+        public virtual Statistics Statistics { get; set; }
     }
 }

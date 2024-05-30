@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             x:Class="LexiOWL.Veiws.MainPages.MainPage"
-            Title="Головна" IconImageSource="mainIco.png">
+            Title="Головна" IconImageSource="mainIco.png"
+            BackgroundColor="White">
 
     <ContentPage.Content>
         <StackLayout>
@@ -26,7 +27,8 @@
                                 HorizontalOptions="End" 
                                     Margin="40,30,0,0"
                                     FontSize="22"
-                                    TextColor ="#946710"/>
+                                    TextColor ="#946710"
+                                   FontFamily="DudkaBoldItalic"/>
 
                             <Image Grid.Column="1" 
                                 Source="OwlQ.gif"

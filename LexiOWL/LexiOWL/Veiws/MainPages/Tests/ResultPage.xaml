@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LexiOWL.Veiws.MainPages.Lessons.ResultPage" 
+             BackgroundColor="White">
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label Text="Результат вивчення теми:" FontFamily="DudkaBoldItalic" FontSize ="20" Margin="40"/>
+            </StackLayout>
+           
+            
+            <StackLayout Grid.Row="1">
+            </StackLayout>
+
+            <StackLayout x:Name="massegeContainer" Grid.Row="2">
+            </StackLayout>
+
+            <Grid Grid.Row="3" Padding="10" RowSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="okButton" Text="Готово!" Grid.Column="0" VerticalOptions="Center" BackgroundColor="White" CornerRadius="10" TextColor="LightGray" IsEnabled="False"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

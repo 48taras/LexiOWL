@@ -85,5 +85,8 @@ namespace LexiOWL.Veiws.RegistrationVeiws
                 SelectedAgeCategory = LabelAgeCategory5.Text;
             }
         }
+
+
+        protected override bool OnBackButtonPressed() { return true; }
     }
 }

@@ -11,10 +11,10 @@ namespace LexiOWL.Domain.Entities
 
         public string AnswerText { get; set; }
 
-        [ForeignKey("Test")]
+        [ForeignKey("TestId")]
         public long TestId { get; set; }
 
         [InverseProperty("Answers")]
-        public Test Test { get; set; }
+        public virtual Test Test { get; set; }
     }
 }

@@ -7,8 +7,8 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
@@ -16,7 +16,7 @@
                 <WebView x:Name="QuestionWebView" BackgroundColor="White" MinimumHeightRequest="300" MinimumWidthRequest="240"  HeightRequest="100"/>
             </StackLayout>
 
-            <Frame Grid.Row="1" Padding="10" Margin="15,0,15,0"  CornerRadius="20" BorderColor="#f2f2f2" HeightRequest="200">
+            <Frame Grid.Row="1" Padding="5" Margin="15,0,15,0"  CornerRadius="20" BorderColor="#f2f2f2" HeightRequest="200">
                 <FlexLayout  x:Name="TargetContainer"  Wrap="Wrap" JustifyContent="Start" AlignItems="Center" Padding="10" >
                     <FlexLayout.GestureRecognizers>
                         <DropGestureRecognizer AllowDrop ="True" Drop="DropGestureRecognizer_Drop"/>
@@ -28,7 +28,10 @@
                 <FlexLayout x:Name="SourceContainer" Wrap="Wrap" JustifyContent="Start" AlignItems="Start" />
             </StackLayout>
 
-            <StackLayout x:Name="massegeContainer" Grid.Row="3" HorizontalOptions="FillAndExpand">
+            <StackLayout Grid.Row="3" >
+                <StackLayout x:Name="massegeContainer" HorizontalOptions="FillAndExpand">
+                    
+                </StackLayout>
             </StackLayout>
 
             <Grid x:Name="buttonCrid" Grid.Row="4" Padding="10" RowSpacing="10">

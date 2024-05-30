@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LexiOWL.Veiws.MainPages.Tests.ListDragQuastionsPage">
+    <ContentPage.Content>
+        <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <ScrollView Grid.Row="0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
+                <StackLayout x:Name="testsStackLayout" Orientation="Vertical">
+                </StackLayout>
+            </ScrollView>
+            <Button Grid.Row="1" Text="На головну" VerticalOptions="End" FontSize="16" BackgroundColor="White" CornerRadius="10" TextColor="#946710" Clicked="BackButton_Clicked"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,9 +1,10 @@
 ﻿using LexiOWL.DAL.Interfaces;
+using LexiOWL.DAL.Repository;
 using LexiOWL.DAL.Services;
 using LexiOWL.Domain.Entities;
 using LexiOWL.Domain.Enums;
 using System;
-
+using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,7 +15,7 @@ namespace LexiOWL.Veiws.MainPages.Lessons
     {
         private Topic topic;
         private Test test;
-        private TestService _testService;
+        private Repository<Test> _repositoryTest;
 
         public SpellingQuestionPage(Topic topic)
         {
@@ -22,7 +23,7 @@ namespace LexiOWL.Veiws.MainPages.Lessons
             NavigationPage.SetHasNavigationBar(this, false);
 
             this.topic = topic;
-            _testService = new TestService();
+            _repositoryTest = new Repository<Test>();
 
             LoadData();
         }
@@ -31,7 +32,9 @@ namespace LexiOWL.Veiws.MainPages.Lessons
         {
             try
             {
-                test = await _testService.GetByTopicIdAndTypeAsync(topic.Id, QuestionType.Spelling);
+                test = (await _repositoryTest.Get(item => item.TopicId == topic.Id
+                    && item.IsTestCompleted == false
+                    && item.QuestionType == QuestionType.Spelling)).FirstOrDefault();
 
                 UrlWebViewSource urlSource = new UrlWebViewSource
                 {
@@ -80,11 +83,21 @@ namespace LexiOWL.Veiws.MainPages.Lessons
                 {
                     var frame = new Frame
                     {
-                        Content = new Label { Text = "ВІРНО!", TextColor = Color.FromHex("#5e5e5e"), FontSize = 14, WidthRequest = 200 },
+                        Content = new Label
+                        {
+                            Text = "ВІРНО!",
+                            TextColor = Color.FromHex("#5e5e5e"),
+                            FontSize = 14,
+                            HorizontalOptions = LayoutOptions.CenterAndExpand,
+                            VerticalOptions = LayoutOptions.CenterAndExpand,
+                            HorizontalTextAlignment = Xamarin.Forms.TextAlignment.Center,
+                            VerticalTextAlignment = Xamarin.Forms.TextAlignment.Center
+                        },
                         CornerRadius = 2,
                         BackgroundColor = Color.FromHex("#66fa86"),
                         Margin = 10,
-                        HasShadow = false
+                        HasShadow = false,
+                        Padding = 10
                     };
 
                     entrySpelling.IsEnabled = false;
@@ -94,13 +107,21 @@ namespace LexiOWL.Veiws.MainPages.Lessons
                 {
                     var frame = new Frame
                     {
-                        Content = new Label { Text = $"НЕ ВІРНО!\n Парильна відповідь:\n\n {test.CorrectAnswer}", TextColor = Color.Black, HorizontalTextAlignment = Xamarin.Forms.TextAlignment.Center, FontSize = 14 },
+                        Content = new Label
+                        {
+                            Text = $"НЕ ВІРНО!\n Парильна відповідь:\n\n {test.CorrectAnswer}",
+                            TextColor = Color.Black,
+                            FontSize = 14,
+                            HorizontalOptions = LayoutOptions.CenterAndExpand,
+                            VerticalOptions = LayoutOptions.CenterAndExpand,
+                            HorizontalTextAlignment = Xamarin.Forms.TextAlignment.Center,
+                            VerticalTextAlignment = Xamarin.Forms.TextAlignment.Center
+                        },
                         CornerRadius = 2,
                         BackgroundColor = Color.FromHex("#ff8178"),
                         Margin = 10,
                         HasShadow = false,
-                        HorizontalOptions = LayoutOptions.Center,
-                        VerticalOptions = LayoutOptions.Center
+                        Padding = 10
                     };
 
                     entrySpelling.IsEnabled = false;
@@ -114,5 +135,7 @@ namespace LexiOWL.Veiws.MainPages.Lessons
                 Navigation.PushAsync(new ResultPage());
             }
         }
+
+        protected override bool OnBackButtonPressed() { return true; }
     }
 }

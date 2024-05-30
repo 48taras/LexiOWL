@@ -121,5 +121,8 @@ namespace LexiOWL.Veiws.LoginVeiws
                 return false;
             }
         }
+
+
+        protected override bool OnBackButtonPressed() { return true; }
     }
 }

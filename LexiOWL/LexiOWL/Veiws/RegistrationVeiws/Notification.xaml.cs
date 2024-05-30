@@ -58,5 +58,8 @@ namespace LexiOWL.Veiws.RegistrationVeiws
                 Console.WriteLine($"Помилка: {ex.Message}");
             }
         }
+
+
+        protected override bool OnBackButtonPressed() { return true; }
     }
 }

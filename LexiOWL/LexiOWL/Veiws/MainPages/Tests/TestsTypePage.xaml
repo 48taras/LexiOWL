@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LexiOWL.Veiws.MainPages.Tests"
+             x:Class="LexiOWL.Veiws.MainPages.Tests.TestsTypePage"
+             BackgroundColor="White"
+             BarBackgroundColor="Wheat"
+             BarTextColor="#946710">
+    
+    
+</TabbedPage>

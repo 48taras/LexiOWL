@@ -100,5 +100,7 @@ namespace LexiOWL.Veiws.RegistrationVeiws
 
             Navigation.PushAsync(loginPage);
         }
+
+        protected override bool OnBackButtonPressed() { return true; }
     }
 }

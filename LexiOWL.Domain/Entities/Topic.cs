@@ -12,8 +12,8 @@ namespace LexiOWL.Domain.Entities
 
         public string Name { get; set; }
 
-        public List<EducationalContent> EducationalContents { get; set; }
+        public virtual List<EducationalContent> EducationalContents { get; set; }
 
-        public List<Test> Tests { get; set; }
+        public virtual List<Test> Tests { get; set; }
     }
 }

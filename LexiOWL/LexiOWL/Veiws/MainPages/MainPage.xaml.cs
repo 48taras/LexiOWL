@@ -64,5 +64,7 @@ namespace LexiOWL.Veiws.MainPages
             }
         }
 
+        protected override bool OnBackButtonPressed() { return true; }
+
     }
 }

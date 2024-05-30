@@ -2,6 +2,7 @@
 using LexiOWL.DAL;
 using LexiOWL.DAL.Interfaces;
 using LexiOWL.DAL.Repository;
+using LexiOWL.DAL.Services;
 using LexiOWL.Domain.Entities;
 using LexiOWL.Domain.Enums;
 using LexiOWL.Veiws.MainPages;
@@ -44,6 +45,10 @@ namespace LexiOWL
                         db.Customers.Add(customer);
                         db.SaveChanges();
 
+                        var statistic = new Statistics { Customer = customer };
+                        db.Statistics.Add(statistic);
+                        db.SaveChanges();
+
                         var profile = new Profile { Age = "18 - 24", AmountOfKnowledge = "😁 Знаю дуже добре", TrainingIntensity = "Ефективно 15 хвилин/день", ProfilePhotoPath = "", CustomerId = customer.Id };
                         db.Profiles.Add(profile);
                         db.SaveChanges();
@@ -59,38 +64,50 @@ namespace LexiOWL
                         EducationalContent educationalContent = new EducationalContent
                         {
                             UrlEducationalVideoContent = "https://www.youtube.com/embed/QyD8e94n0SA?si=b_SC873ngqx4WqsR",
-                            UrlEducationalTextContent = "Alphabet/Alphabet.html",
-                            TopicId = topic.Id
+                            UrlEducationalTextContent = "Alphabet/Alphabet.html"
                         };
 
-                        db.EducationalContents.Add(educationalContent);
-
+                        educationalContent.Topic = topic;
                         customer.Profile = profile;
+                        profile.Customer = customer;
+                        db.SaveChanges();
+
+                        db.EducationalContents.Add(educationalContent);
                         topic.EducationalContents.Add(educationalContent);
                         db.SaveChanges();
 
-                        var testChoice = new Test
-                        {
-                            UrlQuestionText = "Alphabet/AlphabetQuestion1.html",
-                            TopicId = topic.Id,
-                            QuestionType = QuestionType.Choice,
-                            CorrectAnswer = "10"
+                        var testAnswer1 = new TestAnswer { AnswerText = "10"};
+                        var testAnswer2 = new TestAnswer { AnswerText = "12"};
+                        var testAnswer3 = new TestAnswer { AnswerText = "8"};
+                        var testAnswer4 = new TestAnswer { AnswerText = "4"};
+
+                        var testAnswers = new List<TestAnswer> 
+                        { 
+                            testAnswer1, 
+                            testAnswer2, 
+                            testAnswer3, 
+                            testAnswer4 
                         };
 
-                        testChoice.Answers.Add(new TestAnswer { AnswerText = "10", TestId = testChoice.Id });
-                        testChoice.Answers.Add(new TestAnswer { AnswerText = "12", TestId = testChoice.Id });
-                        testChoice.Answers.Add(new TestAnswer { AnswerText = "8", TestId = testChoice.Id });
-                        testChoice.Answers.Add(new TestAnswer { AnswerText = "4", TestId = testChoice.Id });
+                        var testChoice = new Test
+                        {
+                            Name = "Кількість відмінних літер",
+                            UrlQuestionText = "Alphabet/AlphabetQuestion1.html",
+                            QuestionType = QuestionType.Choice,
+                            CorrectAnswer = "10",
+                            TopicId = topic.Id,
+                            Answers = testAnswers,
+                        };
 
-                        db.TestAnswers.AddRange(testChoice.Answers);
                         db.Tests.Add(testChoice);
                         db.SaveChanges();
 
                         var testDrag = new Test
                         {
+                            Name = "Розтановка букв у правильний порядок",
                             UrlQuestionText = "Alphabet/AlphabetQuestion2.html",
-                            TopicId = topic.Id,
                             QuestionType = QuestionType.Drag,
+                            TopicId = topic.Id,
                             CorrectAnswer = "А Б В Г Ґ Д Е Є Ж З"
                         };
 
@@ -99,6 +116,7 @@ namespace LexiOWL
 
                         var testSpelling = new Test
                         {
+                            Name = "Літери алфавіту",
                             UrlQuestionText = "Alphabet/AlphabetQuestion3.html",
                             TopicId = topic.Id,
                             QuestionType = QuestionType.Spelling,

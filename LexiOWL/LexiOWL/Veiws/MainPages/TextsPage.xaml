@@ -4,19 +4,14 @@
              x:Class="LexiOWL.Veiws.MainPages.TextsPage"
              Title="Тести" IconImageSource="testsIco.png"
              BackgroundColor="White">
-    
+
     <ContentPage.Content>
         <StackLayout>
             <StackLayout BackgroundColor="#946710" WidthRequest="50" Margin="0,0,0,0">
                 <Label Text="LexiOWL" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="20"/>
             </StackLayout>
             <ScrollView Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
-                <StackLayout Orientation="Horizontal" >
-                    <StackLayout Margin="2,0,0,0" HorizontalOptions="FillAndExpand">
-                        <Frame CornerRadius="20"  Padding="10" Margin="10" BorderColor="Black" HeightRequest="70" HorizontalOptions="FillAndExpand">
-                            <Label Text="Алфавіт. Відмінності звуків" VerticalOptions="CenterAndExpand" FontSize="16"/>
-                        </Frame>                        
-                    </StackLayout >
+                <StackLayout x:Name="topicsStackLayout" Orientation="Vertical">                    
                 </StackLayout>
             </ScrollView>
         </StackLayout>

@@ -4,6 +4,7 @@ using LexiOWL.Domain.Enums;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -58,6 +59,11 @@ namespace LexiOWL.DAL.Services
         {
             _context.Tests.Remove(entity);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task AppInitialization()
+        {
+
         }
     }
 }

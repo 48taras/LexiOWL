@@ -1,32 +1,44 @@
 ﻿using LexiOWL.DAL.Repository;
 using LexiOWL.Domain.Entities;
+using LexiOWL.Domain.Enums;
 using LexiOWL.Veiws.MainPages.Lessons;
-using LexiOWL.Veiws.MainPages.Tests;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace LexiOWL.Veiws.MainPages
+namespace LexiOWL.Veiws.MainPages.Tests
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TextsPage : ContentPage
+    public partial class ListDragQuastionsPage : ContentPage
     {
-        private readonly Repository<Topic> _repositoryTopic;
+        private readonly Repository<Test> _repositoryTest;
+        private Topic _topic;
 
-        public TextsPage()
+        public ListDragQuastionsPage(Topic topic)
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
 
-            _repositoryTopic = new Repository<Topic>();
+            _topic = topic;
+
+            _repositoryTest = new Repository<Test>();
             AddButtonsToStackLayout();
         }
 
         private async void AddButtonsToStackLayout()
         {
-            var topics = await _repositoryTopic.GetAllAsync();
-            if (topics != null)
+            var tests = await _repositoryTest.Get(item => item.TopicId == _topic.Id
+                && item.QuestionType == QuestionType.Drag
+                && item.IsTestCompleted == false);
+
+            if (tests != null)
             {
-                foreach (var topic in topics)
+                foreach (var test in tests)
                 {
                     Button button = new Button
                     {
@@ -37,17 +49,17 @@ namespace LexiOWL.Veiws.MainPages
                         Margin = new Thickness(10),
                         BorderColor = Color.Black,
                         HeightRequest = 70,
-                        Text = topic.Name,
+                        Text = test.Name,
                         HorizontalOptions = LayoutOptions.FillAndExpand,
                         VerticalOptions = LayoutOptions.Center
                     };
 
                     button.Clicked += (s, e) =>
-                    {                        
-                        Navigation.PushAsync(new TestsTypePage(topic));
+                    {
+                        Navigation.PushAsync(new DragQuestionPage(_topic));
                     };
 
-                    topicsStackLayout.Children.Add(button);
+                    testsStackLayout.Children.Add(button);
                 }
             }
         }
@@ -55,6 +67,11 @@ namespace LexiOWL.Veiws.MainPages
         protected override bool OnBackButtonPressed()
         {
             return true;
+        }
+
+        private void BackButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new TabbedMainPage());
         }
     }
 }

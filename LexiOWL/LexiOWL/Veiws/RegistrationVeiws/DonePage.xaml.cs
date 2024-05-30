@@ -33,5 +33,8 @@ namespace LexiOWL.Veiws.RegistrationVeiws
 
             App.Current.MainPage = new NavigationPage(new TabbedMainPage());
         }
+
+
+        protected override bool OnBackButtonPressed() { return true; }
     }
 }

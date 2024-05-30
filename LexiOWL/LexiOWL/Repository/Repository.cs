@@ -24,14 +24,9 @@ namespace LexiOWL.DAL.Repository
             return await _context.Set<T>().ToListAsync();
         }
 
-        public Task<T> Get(Func<T, bool> predicate)
+        public Task<List<T>> Get(Func<T, bool> predicate)
         {
-            return Task.FromResult(_context.Set<T>().Where(predicate).FirstOrDefault());
-        }
-
-        public async Task<T> GetByIdAsync(int id)
-        {
-            return await _context.Set<T>().FindAsync(id);
+            return Task.FromResult(_context.Set<T>().Where(predicate).ToList());
         }
 
         public async Task AddAsync(T entity)

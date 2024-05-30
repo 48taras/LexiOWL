@@ -150,5 +150,7 @@ namespace LexiOWL.Veiws.MainPages
                 Console.WriteLine(ex.Message);
             }
         }
+
+        protected override bool OnBackButtonPressed() { return true; }
     }
 }

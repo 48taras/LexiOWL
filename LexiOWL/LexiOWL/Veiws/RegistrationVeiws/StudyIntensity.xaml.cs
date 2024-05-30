@@ -79,5 +79,6 @@ namespace LexiOWL.Veiws.RegistrationVeiws
             }
         }
 
+        protected override bool OnBackButtonPressed() { return true; }
     }
 }

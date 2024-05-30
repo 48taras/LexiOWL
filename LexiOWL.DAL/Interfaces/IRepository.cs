@@ -8,9 +8,7 @@ namespace LexiOWL.DAL.Interfaces
     {
         Task<List<T>> GetAllAsync();
 
-        Task<T> Get(Func<T, bool> predicate);
-
-        Task<T> GetByIdAsync(int id);
+        Task<List<T>> Get(Func<T, bool> predicate);
 
         Task AddAsync(T entity);
 

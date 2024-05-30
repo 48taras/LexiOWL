@@ -53,7 +53,7 @@ namespace LexiOWL.Veiws.MainPages
             {
                 if (_customerRepository != null)
                 {
-                    customer = await _customerRepository.Get(user => user.Id == userId);
+                    customer = (await _customerRepository.Get(user => user.Id == userId)).FirstOrDefault();
                     if (customer != null)
                     {
                         profile = await _profileServixe.GetByCustomerIdAsync(customer.Id);
@@ -103,6 +103,8 @@ namespace LexiOWL.Veiws.MainPages
             Navigation.PushAsync(new SettingsPage(customer, profile));
             
         }
+
+        protected override bool OnBackButtonPressed() { return true; }
 
     }
 }

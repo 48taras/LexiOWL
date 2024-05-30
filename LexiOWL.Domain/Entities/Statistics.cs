@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using static System.Net.Mime.MediaTypeNames;
+using System.Collections.Generic;
 
 namespace LexiOWL.Domain.Entities
 {
@@ -9,26 +10,18 @@ namespace LexiOWL.Domain.Entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
-        public int ProfileId { get; set; }
-        [ForeignKey("ProfileId")]
-        public Profile Profile { get; set; }
+        public int CustomerId { get; set; }
 
-        public long TestId { get; set; }
-        [ForeignKey("TestId")]
-        public Test Test { get; set; }
+        [ForeignKey("CustomerId")]
+        public virtual Customer Customer { get; set; }
 
-        public DateTime TestCompletedAt { get; set; }
+        [InverseProperty("Statistics")]
+        public virtual List<EducationalContent> Contents { get; set; } = new List<EducationalContent>();
+        
+        [InverseProperty("Statistics")]
+        public virtual List<Test> Tests { get; set; } = new List<Test>();
 
-        public bool IsTestCorrect { get; set; }
-
-        public long ContentId { get; set; }
-        [ForeignKey("ContentId")]
-        public EducationalContent Content { get; set; }
-
-        public DateTime ContentViewedAt { get; set; }
-
-        public bool IsContentCompleted { get; set; }
     }
 }
