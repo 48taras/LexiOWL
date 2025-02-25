@@ -32,9 +32,6 @@ namespace LexiOWL.DAL
             optionsBuilder
                 .UseLazyLoadingProxies()
                 .UseSqlite($"Filename={_databasePath}");
-            //var connectionString = "Server=93.190.46.34,33301;Database=uh1289306_lexiowlDB;User Id=uh1289306_lexiowlUser;Password=lexiowl;";
-            
-            //optionsBuilder.UseSqlServer(connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
